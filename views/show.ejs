@@ -1,0 +1,7 @@
+<%- include("./partials/header") %> <%- include("./partials/navbar") %>
+
+<div class="p-10 text-white">
+  <% users.forEach((user)=>{ %> <%= user.title %> <% }) %>
+</div>
+
+<%- include("./partials/footer") %>

@@ -1,0 +1,42 @@
+<%- include("./partials/header") %> <%- include("./partials/navbar") %>
+
+<div class="p-10">
+  <div class="flex items-center gap-2">
+    <div class="h-12 w-12 rounded-lg bg-zinc-500 overflow-hidden">
+      <img
+        class="img w-full h-full object-cover"
+        src="/images/<%= user.image%>"
+        alt=""
+      />
+    </div>
+    <form
+      class="form hidden"
+      action="/users/upload"
+      method="post"
+      enctype="multipart/form-data"
+    >
+      <input class="input" type="file" name="image" />
+    </form>
+
+    <h1 class="text-xl">Hey,<%= user.name %></h1>
+  </div>
+  <div class="m-5 flex gap-5">
+    <a href="/posts/createpost/<%= user._id %>">Create post</a>
+    <a href="/posts/show">show post</a>
+  </div>
+</div>
+
+<!-- <script>
+  const img = document.querySelector('.img');
+  const form = document.querySelector('.form');
+  const input = document.querySelector('.input');
+
+  img.addEventListener('click', () => {
+    input.click();
+  });
+
+  input.addEventListener('change', () => {
+    form.submit();
+  });
+</script> -->
+<%- include("./partials/footer") %>

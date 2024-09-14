@@ -1,0 +1,66 @@
+<%- include("./partials/header") %> <%- include("./partials/navbar") %>
+
+<div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+  <form
+    class="form hidden"
+    action="/users/upload"
+    method="post"
+    enctype="multipart/form-data"
+  >
+    <input class="input" type="file" name="image" />
+  </form>
+  <form
+    class="flex rounded-lg px-8 py-7 flex-col gap-3 justify-center items-center border border-zinc-800 w-[28vw]"
+    action="/users/updateuser"
+    method="post"
+  >
+    <div class="h-12 w-12 rounded-lg bg-zinc-500 overflow-hidden">
+      <img
+        class="img w-full h-full object-cover"
+        src="/images/<%= user.image%>"
+        alt=""
+      />
+    </div>
+    <input
+      class="block outline-none rounded-lg px-3 bg-transparent border border-zinc-800 py-2 w-full"
+      type="text"
+      name="name"
+      placeholder="Enter name"
+      value="<%= user.name %>"
+    />
+    <input
+      class="block outline-none rounded-lg px-3 bg-transparent border border-zinc-800 py-2 w-full"
+      type="text"
+      name="username"
+      placeholder="Enter Username"
+      value="<%= user.username %>"
+    />
+
+    <input
+      class="block outline-none rounded-lg px-3 bg-transparent border border-zinc-800 py-2 w-full"
+      type="email"
+      name="email"
+      placeholder="Enter Email"
+      value="<%= user.email %>"
+    />
+    <button class="bg-[#0095F6] rounded-2xl w-full py-2 font-bold text-md">
+      Update
+    </button>
+  </form>
+</div>
+
+<script>
+  const img = document.querySelector('.img');
+  const form = document.querySelector('.form');
+  const input = document.querySelector('.input');
+
+  img.addEventListener('click', () => {
+    input.click();
+  });
+
+  input.addEventListener('change', () => {
+    form.submit();
+  });
+</script>
+
+<%- include("./partials/footer") %>
