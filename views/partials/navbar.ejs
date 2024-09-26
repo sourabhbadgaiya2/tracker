@@ -1,28 +1,37 @@
 <div
-  class="flex items-center justify-between text-zinc-300 text-lg px-8 py-4 border-b border-zinc-800"
+  class="flex relative items-center justify-between text-zinc-300 text-lg px-8 py-4 border-b border-zinc-800"
 >
+  <div
+    class="overlay h-screen w-screen absolute bg-zinc-900/30 backdrop-blur-[1px] top-0 hidden left-0"
+  ></div>
   <div class="h-12 w-12 rounded-lg bg-zinc-500 overflow-hidden">
-    <!-- <img src="" alt=""> -->
+    <img
+      class="h-full w-full object-cover"
+      src="https://cdn.lazyshop.com/files/9cf1cce8-c416-4a69-89ba-327f54c3c5a0/product/f1cc0aa3d94b8ffaecd1cd5b3f1173b9.jpeg"
+      alt=""
+    />
   </div>
-  <div class="flex gap-4">
+
+  <div class="flex gap-4 items-center">
     <% if (user){ %>
+    <div class="flex gap-4">
+      <a
+        class="hover:scale-125 transition ease-in-out delay-0.3s"
+        href="/users/profile"
+        >Home</a
+      >
+      <a class="hover:scale-125 transition ease-in-out delay-75" href="/about"
+        >About</a
+      >
+    </div>
     <h1 class="text-4xl cursor-pointer"><i class="ri-menu-4-fill menu"></i></h1>
+
     <div
       class="flex list flex-col absolute backdrop-blur-3xl backdrop-brightness-150 w-[20vw] text-2xl px-4 h-screen gap-6 py-4 top-0 -right-1/2"
     >
       <div class="text-4xl text-right">
         <i class="ri-close-circle-line cursor-pointer cross"></i>
       </div>
-      <a
-        class="hover:scale-125 pl-5 transition ease-in-out delay-0.3s"
-        href="/users/profile"
-        >Home</a
-      >
-      <a
-        class="hover:scale-125 pl-5 transition ease-in-out delay-75"
-        href="/about"
-        >About</a
-      >
 
       <!-- ------------------ -->
 
@@ -58,13 +67,25 @@
   const menu = document.querySelector('.menu');
   const cross = document.querySelector('.cross');
   const list = document.querySelector('.list');
+  const overlay = document.querySelector('.overlay');
 
   menu.addEventListener('click', () => {
     list.style.right = 0;
+    menu.style.opacity = 0;
     list.style.transition = 'right 0.40s ease';
+    overlay.style.display = 'block';
   });
+
   cross.addEventListener('click', () => {
     list.style.right = `${-100}%`;
     list.style.transition = 'right 2s ease';
+    menu.style.opacity = 1;
+    overlay.style.display = 'none';
+  });
+  overlay.addEventListener('click', () => {
+    list.style.right = `${-100}%`;
+    list.style.transition = 'right 2s ease';
+    menu.style.opacity = 1;
+    overlay.style.display = 'none';
   });
 </script>

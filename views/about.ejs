@@ -1,5 +1,88 @@
 <%- include("./partials/header") %> <%- include("./partials/navbar") %>
 
-<h1>About</h1>
+<div class="py-5 px-10 text-[#B4B4B4]">
+  <h1 class="text-xl font-bold mb-6">About This Project</h1>
+  <div class="flex border-y py-2 border-slate-700">
+    <div class="w-[60vw] px-4">
+      <p class="text-justify text-[15px]">
+        <strong> ExpressApp</strong> is a web application built with the Node.js
+        framework, Express. It uses EJS for templating and Mongoose for managing
+        MongoDB interactions. The project is designed to provide a robust
+        backend, incorporating user authentication via Passport.js with local
+        and Google OAuth2 strategies.
+      </p>
+      <div class="my-4">
+        <h2 class="font-bold mb-4">
+          The app is designed for handling various user interactions with
+          features like:
+        </h2>
+        <ul class="list-disc leading-[2]">
+          <li>
+            <strong> User Authentication:</strong> Local authentication using
+            passport-local and Google OAuth with passport-google-oauth20.
+          </li>
+          <li>
+            <strong> File Uploads:</strong> Managed via multer for handling
+            multipart/form-data, such as image uploads.
+          </li>
+          <li>
+            <strong> Session Management:</strong> Handled with express-session
+            for user session control and connect-flash for displaying flash
+            messages.
+          </li>
+          <li>
+            <strong> Email Notifications:</strong> Using nodemailer to send
+            emails for tasks like password resets.
+          </li>
+          <li>
+            <strong> Environmental Variables:</strong> Managed via dotenv to
+            securely handle sensitive information like API keys.
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- ----------------------------------------- -->
+    <div class="w-[40vw] px-4 border-l border-slate-700">
+      <div class="px-4">
+        <h2 class="font-bold mb-4">Key Dependencies:</h2>
+        <ul class="list-disc leading-[2]">
+          <li>
+            <strong>Express.js:</strong> For setting up the server and handling
+            routing.
+          </li>
+          <li>
+            <strong> Mongoose:</strong> For interacting with MongoDB, providing
+            an object data model (ODM).
+          </li>
+          <li>
+            <strong> Passport.js:</strong> Authentication middleware for both
+            local login and Google OAuth 2.0.
+          </li>
+          <li>
+            <strong> Nodemailer:</strong> To handle email communications, such
+            as password recovery.
+          </li>
+          <li>
+            <strong>Multer:</strong> To handle file uploads securely and
+            efficiently.
+          </li>
+          <li>
+            <strong>EJS:</strong> Template engine to dynamically generate HTML
+            content.
+          </li>
+          <li>
+            <strong> connect-flash:</strong> To handle flash messages, typically
+            used for notifications to users.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <h1 class="text-center my-8">
+    This project is still under active development and is a strong base for
+    applications that require user authentication, session management, <br />
+    and database interactions with MongoDB.
+  </h1>
+</div>
 
 <%- include("./partials/footer") %>

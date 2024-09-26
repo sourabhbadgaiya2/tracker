@@ -1,3 +1,8 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
+
+
+button:hover {
+box-shadow: inset 0px 0px 5px rgb(34, 32, 32);
+}

@@ -1,0 +1,27 @@
+<%- include("./partials/header") %> <%- include("./partials/navbar") %>
+
+<h1 class="p-5 text-xl">
+  <a
+    class="border border-zinc-900 hover:text-white p-2 rounded-xl text-zinc-800"
+    href="/posts/show"
+  >
+    <i class="ri-arrow-left-line"></i> Back</a
+  >
+</h1>
+<div
+  class="text-white flex gap-5 absolute left-1/2 -translate-x-1/2 rounded-xl"
+>
+  <% user.posts.forEach(user => { %>
+  <div class="leading-loose shadow shadow-gray-600 py-3 px-6">
+    <p class="">Title: <%= user.title %></p>
+    <p class="">Amount: <%= user.amount %> Rs.</p>
+    <p class="">Remark: <%= user.remark %></p>
+    <p class="">Payment: <%= user.paymentmode %></p>
+    <div class="flex gap-6">
+      <a class="text-green-500" href="/posts/update/<%= user._id %>">Edit</a>
+      <a class="text-red-500" href="/posts/delete/<%= user._id %>">Delete</a>
+    </div>
+  </div>
+  <% }); %>
+</div>
+<%- include("./partials/footer") %>

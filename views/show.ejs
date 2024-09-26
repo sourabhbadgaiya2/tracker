@@ -1,7 +1,25 @@
 <%- include("./partials/header") %> <%- include("./partials/navbar") %>
 
-<div class="p-10 text-white">
-  <% users.forEach((user)=>{ %> <%= user.title %> <% }) %>
+<h1 class="m-3">
+  <a
+    class="text-xl border border-white px-3 py-1 rounded-full"
+    href="/users/profile"
+  >
+    <i class="ri-arrow-left-line"></i> back</a
+  >
+</h1>
+
+<div class="p-10 text-white absolute left-[20vw]">
+  <ul class="list-disc text-lg">
+    <% user.posts.forEach((user)=>{ %>
+    <li><%= user.title %></li>
+    <% }) %>
+    <p class="shadow-sm">
+      <a class="text-blue-400" href="/posts/details"
+        >// Show All Expense Details //</a
+      >
+    </p>
+  </ul>
 </div>
 
 <%- include("./partials/footer") %>

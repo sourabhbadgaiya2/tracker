@@ -3,25 +3,27 @@
 <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
   <form
     class="flex rounded-lg px-8 py-7 flex-col gap-3 justify-center items-center border border-zinc-800 w-[28vw]"
-    action="/posts/createpost"
+    action="/posts/update/<%= post._id %>"
     method="post"
   >
     <div
       class="flex items-center justify-center text-xl border border-white px-3 py-1 rounded-full"
     >
-      <a href="/users/profile"> <i class="ri-arrow-left-line"></i></a>
+      <a href="/posts/details"> <i class="ri-arrow-left-line"></i></a>
     </div>
     <input
       class="block outline-none rounded-lg px-3 bg-transparent border border-zinc-800 py-2 w-full"
       type="text"
       name="title"
       placeholder="Enter title"
+      value="<%= post.title %>"
     />
     <input
       class="block outline-none rounded-lg px-3 bg-transparent border border-zinc-800 py-2 w-full"
       type="number"
       name="amount"
       placeholder="Enter amount"
+      value="<%= post.amount %>"
     />
 
     <input
@@ -29,16 +31,10 @@
       type="text"
       name="remark"
       placeholder="Enter remark"
+      value="<%= post.remark %>"
     />
-    <input
-      class="block outline-none rounded-lg px-3 bg-transparent border border-zinc-800 py-2 w-full"
-      type="text"
-      name="paymentmode"
-      placeholder="Enter paymentmode"
-    />
-
     <button class="bg-[#0095F6] rounded-2xl w-full py-2 font-bold text-md">
-      Create
+      Update
     </button>
   </form>
 </div>
