@@ -19,6 +19,8 @@ const postSchema = mongoose.Schema(
     },
     paymentmode: {
       type: String,
+      required: [true, 'Payment Mode is Required'],
+      enum: ['Cash', 'UPI', 'Cheque', 'Card'],
     },
     user: { type: mongoose.Schema.Types.ObjectId, ref: 'user' },
   },

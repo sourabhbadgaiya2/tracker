@@ -4,25 +4,18 @@
   <div
     class="overlay h-screen w-screen absolute bg-zinc-900/30 backdrop-blur-[1px] top-0 hidden left-0"
   ></div>
-  <div class="h-12 w-12 rounded-lg bg-zinc-500 overflow-hidden">
-    <img
-      class="h-full w-full object-cover"
-      src="https://cdn.lazyshop.com/files/9cf1cce8-c416-4a69-89ba-327f54c3c5a0/product/f1cc0aa3d94b8ffaecd1cd5b3f1173b9.jpeg"
-      alt=""
-    />
-  </div>
+
+  <% if (user && user.name) { %>
+  <h1 class="text-5xl"><%= user.name.slice(0, 1) + "." %></h1>
+  <% } else { %>
+  <h1 class="text-5xl">🎃</h1>
+  <% } %>
 
   <div class="flex gap-4 items-center">
     <% if (user){ %>
     <div class="flex gap-4">
-      <a
-        class="hover:scale-125 transition ease-in-out delay-0.3s"
-        href="/users/profile"
-        >Home</a
-      >
-      <a class="hover:scale-125 transition ease-in-out delay-75" href="/about"
-        >About</a
-      >
+      <a class="hover:scale-110 transition 3s" href="/users/profile">Home</a>
+      <a class="hover:scale-110 transition" href="/about">About</a>
     </div>
     <h1 class="text-4xl cursor-pointer"><i class="ri-menu-4-fill menu"></i></h1>
 
@@ -35,24 +28,16 @@
 
       <!-- ------------------ -->
 
-      <a
-        class="hover:scale-125 pl-5 transition ease-in-out delay-75"
-        href="/users/updateuser"
+      <a class="hover:scale-110 pl-5 transiay-75" href="/users/updateuser"
         >Edit profile</a
       >
-      <a
-        class="hover:scale-125 pl-5 transition ease-in-out delay-75"
-        href="/users/changepassword"
+      <a class="hover:scale-110 pl-5 transiay-75" href="/users/changepassword"
         >Change password</a
       >
-      <a
-        class="hover:scale-125 pl-5 transition ease-in-out delay-75"
-        href="/users/userdelete"
+      <a class="hover:scale-110 pl-5 transiay-75" href="/users/userdelete"
         >Delete Account</a
       >
-      <a
-        class="hover:scale-125 pl-5 transition ease-in-out delay-75"
-        href="/users/logout"
+      <a class="hover:scale-110 pl-5 transiay-75" href="/users/logout"
         >Log out</a
       >
     </div>

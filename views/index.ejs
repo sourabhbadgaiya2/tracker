@@ -14,12 +14,22 @@
       placeholder="Enter Username"
     />
 
-    <input
-      class="block outline-none rounded-lg px-3 bg-transparent border border-zinc-800 py-2 w-full"
-      type="password"
-      name="password"
-      placeholder="Enter password"
-    />
+    <div class="w-full flex relative items-center">
+      <input
+        id="password"
+        class="block outline-none rounded-lg px-3 bg-transparent border border-zinc-800 py-2 w-full"
+        type="password"
+        name="password"
+        placeholder="Enter password"
+      />
+      <div
+        class="absolute right-1 flex items-center text-2xl hidden"
+        id="eyeIcons"
+      >
+        <i id="showPassword" class="ri-eye-line cursor-pointer"></i>
+        <i id="hidePassword" class="ri-eye-off-line hidden cursor-pointer"></i>
+      </div>
+    </div>
 
     <button class="bg-[#0095F6] rounded-2xl w-full py-2 font-bold text-md">
       Log in
@@ -43,5 +53,32 @@
     >
   </form>
 </div>
+
+<script>
+  const passwordInput = document.getElementById('password');
+  const showPassword = document.getElementById('showPassword');
+  const hidePassword = document.getElementById('hidePassword');
+  const eyeIcons = document.getElementById('eyeIcons');
+
+  passwordInput.addEventListener('input', function () {
+    if (passwordInput.value) {
+      eyeIcons.style.display = 'flex';
+    } else {
+      eyeIcons.style.display = 'none';
+    }
+  });
+
+  showPassword.addEventListener('click', function () {
+    passwordInput.type = 'text';
+    showPassword.classList.add('hidden');
+    hidePassword.classList.remove('hidden');
+  });
+
+  hidePassword.addEventListener('click', function () {
+    passwordInput.type = 'password';
+    hidePassword.classList.add('hidden');
+    showPassword.classList.remove('hidden');
+  });
+</script>
 
 <%- include("./partials/footer") %>

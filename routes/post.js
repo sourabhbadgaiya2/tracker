@@ -45,6 +45,7 @@ router.get('/details', isLoggedIn, async function (req, res, next) {
     user: await req.user.populate('posts'),
   });
 });
+
 router.get('/update/:id', isLoggedIn, async function (req, res, next) {
   const post = await PostSchema.findById(req.params.id);
   res.render('update', {
