@@ -1,6 +1,7 @@
 <%- include("./partials/header") %> <%- include("./partials/navbar") %>
 
 <!-- <img class="h-[80vh]" src="/images/img/screenshot1.png" alt="" /> -->
+
 <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
   <form
     class="flex rounded-lg px-8 py-7 flex-col gap-3 justify-center items-center shadow shadow-gray-700 w-[28vw]"
@@ -46,38 +47,38 @@
       Don't have an account?
       <a class="text-[#67C0F9]" href="/users/create-account">Sign up</a>
     </p>
-    <a
+    <!-- <a
       class="text-[#67C0F9] text-center border-[1px] border-[#67C0F9] rounded-2xl w-full py-2 text-md"
       href="/users/auth/google"
       >Create with google</a
-    >
+    > -->
   </form>
 </div>
 
 <script>
-  const passwordInput = document.getElementById('password');
-  const showPassword = document.getElementById('showPassword');
-  const hidePassword = document.getElementById('hidePassword');
-  const eyeIcons = document.getElementById('eyeIcons');
+  const passwordInput = document.getElementById("password");
+  const showPassword = document.getElementById("showPassword");
+  const hidePassword = document.getElementById("hidePassword");
+  const eyeIcons = document.getElementById("eyeIcons");
 
-  passwordInput.addEventListener('input', function () {
+  passwordInput.addEventListener("input", function () {
     if (passwordInput.value) {
-      eyeIcons.style.display = 'flex';
+      eyeIcons.style.display = "flex";
     } else {
-      eyeIcons.style.display = 'none';
+      eyeIcons.style.display = "none";
     }
   });
 
-  showPassword.addEventListener('click', function () {
-    passwordInput.type = 'text';
-    showPassword.classList.add('hidden');
-    hidePassword.classList.remove('hidden');
+  showPassword.addEventListener("click", function () {
+    passwordInput.type = "text";
+    showPassword.classList.add("hidden");
+    hidePassword.classList.remove("hidden");
   });
 
-  hidePassword.addEventListener('click', function () {
-    passwordInput.type = 'password';
-    hidePassword.classList.add('hidden');
-    showPassword.classList.remove('hidden');
+  hidePassword.addEventListener("click", function () {
+    passwordInput.type = "password";
+    hidePassword.classList.add("hidden");
+    showPassword.classList.remove("hidden");
   });
 </script>
 

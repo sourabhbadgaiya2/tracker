@@ -8,18 +8,18 @@
     <i class="ri-arrow-left-line"></i> back</a
   >
 </h1>
-
 <div class="p-10 text-white absolute left-[20vw]">
+  <% if (user.posts.length > 0) { %>
   <ul class="list-disc text-lg">
-    <% user.posts.forEach((user)=>{ %>
-    <li><%= user.title %></li>
+    <% user.posts.forEach((post) => { %>
+    <li>
+      <a class="text-blue-400" href="/posts/details"><%= post.title %></a>
+    </li>
     <% }) %>
-    <p class="shadow-sm">
-      <a class="text-blue-400" href="/posts/details"
-        >// Show All Expense Details //</a
-      >
-    </p>
   </ul>
+  <% } else { %>
+  <p class="text-lg text-zinc-500">Not yet</p>
+  <% } %>
 </div>
 
 <%- include("./partials/footer") %>

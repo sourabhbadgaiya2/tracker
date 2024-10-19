@@ -8,6 +8,7 @@
     <i class="ri-arrow-left-line"></i> Back</a
   >
 </h1>
+<% if (user.posts.length > 0) { %>
 <div
   class="text-white flex gap-5 absolute left-1/2 -translate-x-1/2 rounded-xl"
 >
@@ -22,6 +23,8 @@
       <a class="text-red-500" href="/posts/delete/<%= user._id %>">Delete</a>
     </div>
   </div>
-  <% }); %>
+  <% }); %> <% } else { %>
+  <p class="text-lg text-center">Not yet</p>
+  <% } %>
 </div>
 <%- include("./partials/footer") %>

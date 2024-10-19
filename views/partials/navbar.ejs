@@ -8,7 +8,11 @@
   <% if (user && user.name) { %>
   <h1 class="text-5xl"><%= user.name.slice(0, 1) + "." %></h1>
   <% } else { %>
-  <h1 class="text-5xl">🎃</h1>
+  <img
+    class="h-12 w-12 rounded-full object-cover"
+    src="/images/Sheryians_logo_EzwgcppnD.webp"
+    alt=""
+  />
   <% } %>
 
   <div class="flex gap-4 items-center">
@@ -49,28 +53,28 @@
 </div>
 
 <script>
-  const menu = document.querySelector('.menu');
-  const cross = document.querySelector('.cross');
-  const list = document.querySelector('.list');
-  const overlay = document.querySelector('.overlay');
+  const menu = document.querySelector(".menu");
+  const cross = document.querySelector(".cross");
+  const list = document.querySelector(".list");
+  const overlay = document.querySelector(".overlay");
 
-  menu.addEventListener('click', () => {
+  menu.addEventListener("click", () => {
     list.style.right = 0;
     menu.style.opacity = 0;
-    list.style.transition = 'right 0.40s ease';
-    overlay.style.display = 'block';
+    list.style.transition = "right 0.40s ease";
+    overlay.style.display = "block";
   });
 
-  cross.addEventListener('click', () => {
+  cross.addEventListener("click", () => {
     list.style.right = `${-100}%`;
-    list.style.transition = 'right 2s ease';
+    list.style.transition = "right 2s ease";
     menu.style.opacity = 1;
-    overlay.style.display = 'none';
+    overlay.style.display = "none";
   });
-  overlay.addEventListener('click', () => {
+  overlay.addEventListener("click", () => {
     list.style.right = `${-100}%`;
-    list.style.transition = 'right 2s ease';
+    list.style.transition = "right 2s ease";
     menu.style.opacity = 1;
-    overlay.style.display = 'none';
+    overlay.style.display = "none";
   });
 </script>
