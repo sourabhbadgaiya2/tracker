@@ -69,6 +69,11 @@ app.use((req, res, next) => {
   res.locals.error_msg = req.flash("error_msg");
   next();
 });
+
+app.listen(process.env.PORT, () => {
+  console.log(`Example app listening on port ${process.env.PORT}`);
+});
+
 // error handler
 // app.use(function (err, req, res, next) {
 //   // set locals, only providing error in development
